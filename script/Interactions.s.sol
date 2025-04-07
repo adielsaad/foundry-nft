@@ -10,11 +10,11 @@ contract MintBasicNft is Script {
     string public constant PUG_TOKEN_URI = "ipfs://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4/?filename=0-PUG.json";
 
     function run() external {
-        address mostRecentlyDeployed = DevOpsTools.getLatestDeployment("BasicNft", block.chainid);
+        address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment("BasicNft", block.chainid);
         mintNftOnContract(mostRecentlyDeployed);
     }
 
-    function mintNftOnContract(address mostRecentlyDeployed) public {
+    function mintNftOnContract(address contractAddress) public {
         vm.startBroadcast();
         BasicNft(contractAddress).mintNft(PUG_TOKEN_URI);
         vm.stopBroadcast();
