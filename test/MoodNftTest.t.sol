@@ -25,4 +25,5 @@ contract MoodNftTest is Test {
         moodNft.mintNft();
         console.log(moodNft.tokenURI(0));
     }
+    
 }
