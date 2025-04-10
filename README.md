@@ -152,4 +152,3 @@ The basic implementation includes:
 #### BasicNft
 - `mintNft()`: Mint a new NFT
 - `tokenURI(uint256 tokenId)`: Get the NFT's metadata URI
-
